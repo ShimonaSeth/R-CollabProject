@@ -5,8 +5,10 @@ AERS Adverse Event Reporting System {
      
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: white;
             margin: 0;
+            min-height: 100vh;
+            
         }
         .topnav {
             background-color: #18613e; /* Pine Green */
@@ -15,10 +17,10 @@ AERS Adverse Event Reporting System {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 10px 20px;
         }
         
         .topnav .logo {
-            padding: 14px 16px;
             font-size: 50px;
             font-weight: bold;
         }
@@ -43,6 +45,14 @@ AERS Adverse Event Reporting System {
         .topnav .nav-links {
             margin-left: auto;
         }
+
+        .outer-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 2cm; /* Adjusted margins to leave few centimeters on right and left */
+            flex-grow: 1;
+        }
+        
         .box-container {
             max-width: 600px;
             border: 2px solid #ccc;
@@ -51,8 +61,43 @@ AERS Adverse Event Reporting System {
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
+        .sidebar {
+            background-color: whitesmoke;
+            padding: 20px;
+            color: black;
+            background-color: #f4f4f4;
+            width: 200px;
+            margin-right: 20px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            position: fixed;
+            height: 100%;
+        }
+        .sidebar h2 {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .box-container {
+            max-width: 800px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-grow: 1;
+            margin-left: 250px; 
+        }
         
-        .adverse-event-form {
+        .report-an-adverse-event {
             max-width: 400px;
             padding: 20px;
             border: 2px solid #ccc;
@@ -60,10 +105,38 @@ AERS Adverse Event Reporting System {
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        fieldset {
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-size: 20px;
+            font-weight: bold;
+            color: #18613e;
+            margin-bottom: 10px;
+        }
+        .info-box {
+            background-color: #18613e;
+            color: #000;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
         
         h2 {
-            text-align: center;
-            margin-bottom: 20px;
+            text-align: left;
+            margin-bottom: 40px;
             color: #18613e;
         }
         
@@ -99,3 +172,16 @@ AERS Adverse Event Reporting System {
         button:hover {
             background-color: #45a049;
         }
+        .footer-bar {
+            background-color: #18613e; 
+            height: 20px; 
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        
