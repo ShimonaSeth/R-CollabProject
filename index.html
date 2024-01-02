@@ -13,94 +13,122 @@
     <!-- Navigation Pane -->
     <nav>
       <div class="topnav">
-        <div class="logo">AERT</div>
+        <div class="logo">AERT </div>
         <div class="nav-links">
             <a href="#about">About AERT</a>
             <a href="#faqs">FAQs</a>
             <a href="#contact">CONTACT</a>
         </div>
-    
     </nav>
+    
+    <div class="outer-container">
+      <div class="sidebar">
+          <h2>Completion Status</h2>
+          <ul>
+            <li>
+                <input type="checkbox" id="patientInfoCheckbox">
+                <label for="patientInfoCheckbox"><a href="#patientInformation">Patient Information</a></label>
+            </li>
+            <li>
+                <input type="checkbox" id="adverseEventCheckbox">
+                <label for="adverseEventCheckbox"><a href="#adverseEventInformation">Adverse Event Information</a></label>
+            </li>
+            <li>
+                <input type="checkbox" id="reportersInfoCheckbox">
+                <label for="reportersInfoCheckbox"><a href="#reportersInformation">Reporter's Information</a></label>
+            </li>
+        </ul>
+      </div>
 
     <div class="outer-container">
       <div class="box-container">
       <div class="adverse-event-tool">
-        <h2>Adverse Event Reporting Tool</h2>
+        <h2>Report an Adverse Event During a Hospital Stay  </h2>
         <form action="https://script.google.com/macros/s/AKfycbyMvbeqKftXeBVZ3z8z9iXRBmyPIskGMyf5gd0glqlOm2EVRz-pSUFYr4BMg7GsvSaH/exec" method="post">
         <form id="adverseEventTool">
 
-          <label for="incidentDate">Incident Date</label>
-          <input type="date" id="incidentDate" name="incidentDate" required />
-
-          <label for="patientID">Patient ID</label>
-          <input type="text" id="patientID" name="patientID" required />
-         
-          <label for="patientfullname">Patient Full Name</label>
-          <input type="text" id="patientfullname" name="patientFullName" required />
-          
-          <label for="eventCategory">Category of Adverse Event</label>
-          <select id="eventCategory" name="eventCategory" required>
-            <option value="medicationError">Medication Error</option>
-            <option value="adverseReaction">Adverse Reaction</option>
-            <option value="surgicalComplication">Surgical Complication</option>
-            <option value="intensivecareComplication">
-              Intensive Care Complication
-            </option>
-            <option value="perinatalcare">Perinatal Care Complication</option>
-            <option value="emergencydepartmentComplication">
-              Surgical Department Complication
-            </option>
-
-          </select>
-
-          <label for="eventDescription">Event Description</label>
-          <textarea
-            id="eventDescription"
-            name="eventDescription"
-            rows="4"
-            required
-          ></textarea>
-
-          <label for="clinicalIndicators">Clinical Indicators</label>
-          <textarea
-            id="clinicalIndicators"
-            name="clinicalIndicators"
-            rows="4"
-            required
-          ></textarea>
-
-          <label for="contributingFactors">Contributing Factors</label>
-          <textarea
-            id="contributingFactors"
-            name="contributingFactors"
-            rows="4"
-            required
-          ></textarea>
-
-          <label for="severityofharm">Severity of Harm</label>
-          <select id="severity" name="severity" required>
-            <option value="temporaryharmtothepatient&requiredintervention">Temporary Harm & Required Intervention</option>
-            <option value="temporaryharmtothepatient&requiredprolongedintervention">Temporary Harm & Required Prolonged Intervention</option>
-            <option value="permanantpatientharm">Permanant Patient Harm</option>
-            <option value="interventionrequiredtosustanlife">Intervention Required to Sustain Life</option>
-            <option value="patientdeath">Patient Death</option>
-          </select>
-
-          <label for="actionsTaken">Actions Taken</label>
-          <textarea
-            id="actiionsTaken"
-            name="actionsTaken"
-            rows="4"
-            required
-          ></textarea>
-
+          <fieldset id="patientInformation">
+            <legend>Patient Information</legend>
+        
+            <label for="incidentDate">Incident Date</label>
+            <input type="date" id="incidentDate" name="incidentDate" required />
+        
+            <label for="patientID">Patient ID</label>
+            <input type="text" id="patientID" name="patientID" required />
+        
+            <label for="patientfullname">Patient Full Name</label>
+            <input type="text" id="patientfullname" name="patientFullName" required />
+        
+            <label for="dateofbirth">Birth Date</label>
+            <input type="date" id="birthDate" name="birthDate" required />
+        
+            <label for="sex">Sex</label>
+            <select id="sex" name="sex" required>
+                <option value="male">male</option>
+                <option value="female">female</option>
+            </select>
+        </fieldset>
+        
+        <fieldset id="adverseEventInformation">
+            <legend>Adverse Event Information</legend>
+        
+            <label for="eventCategory">Category of Adverse Event</label>
+            <select id="eventCategory" name="eventCategory" required>
+                <option value="medicationError">Medication Error</option>
+                <option value="TransfusionReaction">Transfusion Reaction</option>
+                <option value="surgicalComplication">Surgical Complication</option>
+                <option value="intensivecareComplication">Intensive Care Complication</option>
+                <option value="patientfalls">Falls</option>
+                <option value="pressureUlcers">Pressure Ulcers</option>
+                <option value="perinatalcare">Perinatal Care Complication</option>
+                <option value="emergencydepartmentComplication">Surgical Department Complication</option>
+                <option value="Other">Other</option>
+            </select>
+        
+            <label for="eventDescription">Event Description</label>
+            <textarea id="eventDescription" name="eventDescription" rows="4" required></textarea>
+        
+            <label for="clinicalIndicators">Clinical Indicators</label>
+            <textarea id="clinicalIndicators" name="clinicalIndicators" rows="4" required></textarea>
+        
+            <label for="contributingFactors">Contributing Factors</label>
+            <textarea id="contributingFactors" name="contributingFactors" rows="4" required></textarea>
+        
+            <label for="severityofharm">Severity of Harm</label>
+            <select id="severity" name="severity" required>
+                <option value="temporaryharmtothepatient&requiredintervention">Temporary Harm & Required Intervention</option>
+                <option value="temporaryharmtothepatient&requiredprolongedintervention">Temporary Harm & Required Prolonged Intervention</option>
+                <option value="permanantpatientharm">Permanant Patient Harm</option>
+                <option value="interventionrequiredtosustanlife">Intervention Required to Sustain Life</option>
+                <option value="patientdeath">Patient Death</option>
+            </select>
+        
+            <label for="actionsTaken">Actions Taken</label>
+            <textarea id="actionsTaken" name="actionsTaken" rows="4" required></textarea>
+        </fieldset>
+      
+      <fieldset id="reportersInformation">
+          <legend>Reporter's Information</legend>
           <label for="reviewerName">Reviewer's Name</label>
-            <input type="text" id="reviewerName" name="reviewerName" required>
-            <button type="submit">Submit</button>
+          <input type="text" id="reviewerName" name="reviewerName" required>
+      
+          <label for="designation">Reviewer's Designation</label>
+          <input type="text" id="reviewerDesignation" name="reviewerDesignation" required>
+      
+          <label for="dateofreporting">Reporting Date</label>
+          <input type="date" id="reportingDate" name="reportingDate" required />
+      </fieldset>
+
+    <button type="submit">Submit</button>
+    <div class="footer-bar">
+      <!-- Add any content or text inside the footer bar -->
+      ABC Hospital
+  </div>
           </form>
-        </form>
+        </form> 
       </div>
     </div>
+
     <script>
       const form = document.querySelector("#adverseEventReportingTool");
       const submitButton = document.querySelector("#submit");
