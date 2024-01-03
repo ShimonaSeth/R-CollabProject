@@ -30,28 +30,33 @@
                 <label for="patientInfoCheckbox"><a href="#patientInformation">Patient Information</a></label>
             </li>
             <li>
+              <input type="checkbox" id="staffsInfoCheckbox">
+              <label for="staffsInfoCheckbox"><a href="#staffsInformation">Staff's Information</a></label>
+          </li>
+
+            <li>
                 <input type="checkbox" id="adverseEventCheckbox">
                 <label for="adverseEventCheckbox"><a href="#adverseEventInformation">Adverse Event Information</a></label>
             </li>
             <li>
-                <input type="checkbox" id="reportersInfoCheckbox">
-                <label for="reportersInfoCheckbox"><a href="#reportersInformation">Reporter's Information</a></label>
-            </li>
+              <input type="checkbox" id="reportCompilationInfoCheckbox">
+              <label for="reportCompilationInfoCheckbox"><a href="#reportCompilationInformation">Report Compilation Information</a></label>
+          </li>   
         </ul>
       </div>
 
     <div class="outer-container">
       <div class="box-container">
       <div class="adverse-event-tool">
-        <h2>Report an Adverse Event During a Hospital Stay  </h2>
+        <h2>Patient Safety Incident Reporting Form </h2>
         <form action="https://script.google.com/macros/s/AKfycbyMvbeqKftXeBVZ3z8z9iXRBmyPIskGMyf5gd0glqlOm2EVRz-pSUFYr4BMg7GsvSaH/exec" method="post">
         <form id="adverseEventTool">
 
           <fieldset id="patientInformation">
             <legend>Patient Information</legend>
         
-            <label for="incidentDate">Incident Date</label>
-            <input type="date" id="incidentDate" name="incidentDate" required />
+            <label for="dateofadmission">Admission Date</label>
+            <input type="date" id="admissionDate" name="admissionDate" required />
         
             <label for="patientID">Patient ID</label>
             <input type="text" id="patientID" name="patientID" required />
@@ -62,61 +67,164 @@
             <label for="dateofbirth">Birth Date</label>
             <input type="date" id="birthDate" name="birthDate" required />
         
-            <label for="sex">Sex</label>
-            <select id="sex" name="sex" required>
-                <option value="male">male</option>
-                <option value="female">female</option>
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
             </select>
-        </fieldset>
+            
+            <label for="department/Ward">Department/Ward of Admission</label>
+            <input type="text" id="department/Ward" name="department/Ward" required />
+            
+            <label for="finalDiagnosis">Final Diagnosis</label>
+            <input type="text" id="finalDiagnosis" name="finalDiagnosis" required />
+          </fieldset>
+          
+          <fieldset id="staffsInformation">
+            <legend>Staff's Information</legend>
+            
+            <label for="staffFullName">Full Name</label>
+            <input type="text" id="staffFullName" name="staffFullName" required />
+  
+           <label for="staffContact">Contact Details</label>
+           <input type="text" id="staffContact" name="staffContact" required />
+           
+           <label for="Department">Department</label>
+           <input type="text" id="Department" name="staffContact" required />
+           </fieldset>
+
         
         <fieldset id="adverseEventInformation">
             <legend>Adverse Event Information</legend>
-        
-            <label for="eventCategory">Category of Adverse Event</label>
-            <select id="eventCategory" name="eventCategory" required>
-                <option value="medicationError">Medication Error</option>
-                <option value="TransfusionReaction">Transfusion Reaction</option>
-                <option value="surgicalComplication">Surgical Complication</option>
-                <option value="intensivecareComplication">Intensive Care Complication</option>
-                <option value="patientfalls">Falls</option>
-                <option value="pressureUlcers">Pressure Ulcers</option>
-                <option value="perinatalcare">Perinatal Care Complication</option>
-                <option value="emergencydepartmentComplication">Surgical Department Complication</option>
-                <option value="Other">Other</option>
+            
+            <label for="dateofPSI">PSI Date</label>
+            <input type="date" id="dateofPSI" name="dateofPSI" required />
+            
+            <label for="timeofPSI">PSI Time</label>
+            <input type="time" id="timeofPSI" name="timeofPSI" required />
+
+            <label for="safetyIndicator">Safety Indicator</label>
+            <select id="safetyIndicator" name="safetyIndicator" required>
+            <option value="noHarm">No Harm</option>
+            <option value="nearMiss">Near Miss</option>
+            <option value="adverseEvent">Adverse Event</option>
             </select>
+
+
+            <label for="patientSafetyIndicator">Patient Safety Indicator</label>
+            <select id="patientSafetyIndicator" name="patientSafetyIndicator" required>
+                <option value="PSI02">PSI 02 - Death Rate in Low-Mortality DRGs</option>
+                <option value="PSI03">PSI 03 - Pressure Ulcer Rate</label</option>
+                <option value="PSI04">PSI 04 - Death Rate Among Surgical Inpatients</option>
+                <option value="PSI05">PSI 05 - Retained Surgical Item or Unretrieved Device Fragment Count</option>
+                <option value="PSI06">PSI 06 - Iatrogenic Pneumothorax Rate</option>
+                <option value="PSI07">PSI 07 - Central Venous Catheter-Related Blood Stream Infection Rate</option>
+                <option value="PSI08">PSI 08 - In-Hospital Fall-Associated Fracture Rate</option>
+                <option value="PSI09">PSI 09 - Postoperative Hemorrhage or Hematoma Rate</option>
+                <option value="PSI10">PSI 10 - Postoperative Acute Kidney Injury Requiring Dialysis Rate</option>
+                <option value="PSI11">PSI 11 - Postoperative Respiratory Failure Rate</option>
+                <option value="PSI12">PSI 12 - Perioperative Pulmonary Embolism or Deep Vein Thrombosis (PE/DVT) Rate</option>
+                <option value="PSI13">PSI 13 - Postoperative Sepsis Rate</option>
+                <option value="PSI14">PSI 14 - Postoperative Wound Dehiscence Rate</option>
+                <option value="PSI15">PSI 15 - Abdominopelvic Accidental Puncture or Laceration Rate</option>
+                <option value="PSI17">PSI 17 - Birth Trauma Rate - Injury to Neonate</option>
+                <option value="PSI18">PSI 18 - Obstetric Trauma Rate - Vaginal Delivery with Instrument</option>
+                <option value="PSI19">PSI 19 - Obstetric Trauma Rate - Vaginal Delivery without Instrument</option>
+                <option value="PSI90">PSI 90 - Patient Safety and Adverse Events Composite</option>
+              </select>
         
             <label for="eventDescription">Event Description</label>
             <textarea id="eventDescription" name="eventDescription" rows="4" required></textarea>
         
-            <label for="clinicalIndicators">Clinical Indicators</label>
-            <textarea id="clinicalIndicators" name="clinicalIndicators" rows="4" required></textarea>
-        
-            <label for="contributingFactors">Contributing Factors</label>
-            <textarea id="contributingFactors" name="contributingFactors" rows="4" required></textarea>
-        
-            <label for="severityofharm">Severity of Harm</label>
-            <select id="severity" name="severity" required>
-                <option value="temporaryharmtothepatient&requiredintervention">Temporary Harm & Required Intervention</option>
-                <option value="temporaryharmtothepatient&requiredprolongedintervention">Temporary Harm & Required Prolonged Intervention</option>
-                <option value="permanantpatientharm">Permanant Patient Harm</option>
-                <option value="interventionrequiredtosustanlife">Intervention Required to Sustain Life</option>
-                <option value="patientdeath">Patient Death</option>
+          
+            <label for="severityAssessment">Severity Assessment Code</label>
+            <select id="severityAssessment" name="severityAssessment" required>
+            <option value="SAC-1" style="color: red;">SAC-1 - Serious Harm or Death</option>
+            <option value="SAC-2" style="color: orange;">SAC-2 - Moderate Harm</option>
+            <option value="SAC-3" style="color: yellow;">SAC-3 - Minor or No Harm</option>
             </select>
-        
-            <label for="actionsTaken">Actions Taken</label>
-            <textarea id="actionsTaken" name="actionsTaken" rows="4" required></textarea>
+
+            <label for="assessmentMethod">Method of PSI Detection:</label>
+            <select id="assessmentMethod" name="assessmentMethod" required>
+              <option value="healthProfessional">Reported by Health Professional</option>
+              <option value="researchStudies">Research Studies</option>
+              <option value="patientExperienceSurvey">Survey on Patient Experience of Care</option>
+              <option value="inpatientMedicalReview">Inpatient Medical Review</option>
+              <option value="recordReviewFollowUp">Review of Record on Follow-Up</option>
+              <option value="externalSources">External Sources (Complaints, Media, Public)</option>
+              <option value="safetyWalkRounds">Safety Walk Rounds</option>
+              <option value="focusedTeams">Focused Teams</option>
+            </select>
+
+            <label for="contributingFactors">Contributing Factors</label>
+<select id="contributingFactors" name="contributingFactors" multiple required>
+    <optgroup label="Staff Related">
+        <option value="cognitive">Cognitive</option>
+        <option value="performance">Performance</option>
+        <option value="behaviour">Behaviour</option>
+        <option value="communication">Communication</option>
+        <option value="pathophysiologicalDisease">Pathophysiological Disease</option>
+    </optgroup>
+    <optgroup label="Patient Related">
+        <option value="cognitive">Cognitive</option>
+        <option value="behaviour">Behaviour</option>
+        <option value="communication">Communication</option>
+        <option value="pathophysiologicalDisease">Pathophysiological Disease</option>
+        <option value="emotional">Emotional</option>
+        <option value="social">Social</option>
+    </optgroup>
+    <optgroup label="Work Environment">
+        <option value="physicalEnvironment">Physical Environment</option>
+        <option value="infrastructure">Infrastructure</option>
+        <option value="remoteDistance">Remote/Long Distance from Service</option>
+        <option value="equipment">Equipment</option>
+        <option value="consumables">Consumables</option>
+        <option value="environmentalRisk">Environmental Risk</option>
+        <option value="codesSpecificationsRegulations">Current Code/Specification/Regulation</option>
+        <option value="securitySafety">Security Safety</option>
+    </optgroup>
+    <optgroup label="Organization">
+      <option value="protocolsPoliciesProcedures">Protocols/Policies/Procedures</option>
+      <option value="processes">Processes</option>
+      <option value="organizationalManagementCulture">Organizational Management/Culture</option>
+      <option value="organizationOfTeams">Organization of Teams</option>
+  </optgroup>
+  <optgroup label="External">
+      <option value="naturalEnvironment">Natural Environment</option>
+      <option value="equipmentProducts">Equipment/Products</option>
+      <option value="serviceSystem">Service/System</option>
+      <option value="policies">Policies</option>
+  </optgroup>
+  <optgroup label="Other">
+      <option value="other">Other</option>
+  </optgroup>
+</select>
+  
+          <label for="actionsTaken">Actions Taken</label>
+          <textarea id="actionsTaken" name="actionsTaken" rows="4" required></textarea>
         </fieldset>
       
-      <fieldset id="reportersInformation">
-          <legend>Reporter's Information</legend>
-          <label for="reviewerName">Reviewer's Name</label>
-          <input type="text" id="reviewerName" name="reviewerName" required>
+        <fieldset id="reportCompilationInformatio">
+          <legend>Report Compilation Information</legend>
       
-          <label for="designation">Reviewer's Designation</label>
-          <input type="text" id="reviewerDesignation" name="reviewerDesignation" required>
-      
-          <label for="dateofreporting">Reporting Date</label>
-          <input type="date" id="reportingDate" name="reportingDate" required />
+          <label for="dateofclosureofPSIcase">PSI Case Closure Date</label>
+          <input type="date" id="dateofclosureofPSIcase" name="dateofclosureofPSIcase" required />
+          <label for="typeofClosure">Type of Closure</label>
+            <select id="typeofClosure" name="typeofClosure" required>
+                <option value="PSICaseConcluded">PSI Case Concluded</option>
+                <option value="litigation">Litigation</option>
+                <option value="referredToLabourRelations">Referred to Labour Relations</option>
+            </select>
+
+            <label for="compiledBy">Compiled By</label>
+            <input type="text" id="compiledBy" name="compiledBy" required />
+        
+            <label for="designation">Designation</label>
+            <input type="text" id="designation" name="designation" required />
+           
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required />
+            
       </fieldset>
 
     <button type="submit">Submit</button>
